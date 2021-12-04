@@ -1,7 +1,6 @@
 package day3
 
 import (
-	"aoc21/utils"
 	"fmt"
 	"strconv"
 )
@@ -13,7 +12,7 @@ func CreatePuzzle2() *Puzzle2 {
 type Puzzle2 struct {}
 
 func (p *Puzzle2) Solve() error {
-	diagnostics, err := utils.Diagnostics()
+	diagnostics, err := Diagnostics()
 	if err != nil {
 		return err
 	}

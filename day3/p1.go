@@ -7,6 +7,22 @@ import (
 	"strings"
 )
 
+func Diagnostics() ([]string, error) {
+	r, err := utils.ReadFile("inputs/diagnostics")
+	if err != nil {
+		return nil, err
+	}
+	rawDiagnostics := strings.Split(string(r), "\n")
+	var diagnostics []string
+	for _, d := range rawDiagnostics {
+		diagnostics = append(diagnostics, d)
+	}
+	if len(diagnostics) == 0 {
+		return nil, fmt.Errorf("oops no diagnostics")
+	}
+	return diagnostics, nil
+}
+
 func CreatePuzzle1() *Puzzle1 {
 	return &Puzzle1{}
 }
@@ -16,7 +32,7 @@ type Puzzle1 struct {}
 const BINARY_SIZE = 12
 
 func (p *Puzzle1) Solve() error {
-	diagnostics, err := utils.Diagnostics()
+	diagnostics, err := Diagnostics()
 	if err != nil {
 		return err
 	}

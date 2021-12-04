@@ -3,7 +3,33 @@ package day2
 import (
 	"aoc21/utils"
 	"fmt"
+	"strconv"
+	"strings"
 )
+
+type Command struct {
+	Type string
+	Unit int
+}
+
+func PlannedCourse() ([]Command, error) {
+	r, err := utils.ReadFile("inputs/planned_course")
+	if err != nil {
+		return nil, err
+	}
+	rawCourse := strings.Split(string(r), "\n")
+	var course []Command
+	for _, c := range rawCourse {
+		cp := strings.Split(c, " ")
+		u, _ := strconv.Atoi(cp[1]);
+		command := Command{strings.ToUpper(cp[0]), u}
+		course = append(course, command)
+	}
+	if len(course) == 0 {
+		return nil, fmt.Errorf("oops no planned course")
+	}
+	return course, nil
+}
 
 func CreatePuzzle1() *Puzzle1 {
 	return &Puzzle1{}
@@ -12,7 +38,7 @@ func CreatePuzzle1() *Puzzle1 {
 type Puzzle1 struct {}
 
 func (p *Puzzle1) Solve() error {
-	course, err := utils.PlannedCourse()
+	course, err := PlannedCourse()
 	if err != nil {
 		return err
 	}

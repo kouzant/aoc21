@@ -1,7 +1,6 @@
 package day1
 
 import (
-	"aoc21/utils"
 	"fmt"
 	"math"
 )
@@ -13,7 +12,7 @@ func CreatePuzzle2() *Puzzle2 {
 type Puzzle2 struct {}
 
 func (p *Puzzle2) Solve() error {
-	readings, err := utils.DepthReadings()
+	readings, err := DepthReadings()
 	if err != nil {
 		return err
 	}

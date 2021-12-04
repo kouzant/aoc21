@@ -1,7 +1,6 @@
 package day2
 
 import (
-	"aoc21/utils"
 	"fmt"
 )
 
@@ -12,7 +11,7 @@ func CreatePuzzle2() *Puzzle2 {
 type Puzzle2 struct {}
 
 func (p *Puzzle2) Solve() error {
-	course, err := utils.PlannedCourse()
+	course, err := PlannedCourse()
 	if err != nil {
 		return err
 	}

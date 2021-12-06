@@ -1,18 +1,14 @@
 package day3
 
 import (
-	"aoc21/utils"
+	"aoc21/inputs"
 	"fmt"
 	"strconv"
 	"strings"
 )
 
 func Diagnostics() ([]string, error) {
-	r, err := utils.ReadFile("inputs/diagnostics")
-	if err != nil {
-		return nil, err
-	}
-	rawDiagnostics := strings.Split(string(r), "\n")
+	rawDiagnostics := strings.Split(inputs.Diagnostics, "\n")
 	var diagnostics []string
 	for _, d := range rawDiagnostics {
 		diagnostics = append(diagnostics, d)

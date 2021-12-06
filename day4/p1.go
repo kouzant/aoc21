@@ -1,6 +1,9 @@
 package day4
 
-import "aoc21/utils"
+import (
+	"aoc21/inputs"
+	"fmt"
+)
 
 type Point struct {
 	Value int
@@ -17,10 +20,8 @@ type Bingo struct {
 }
 
 func BingoBoard() (Bingo, error) {
-	_, err := utils.ReadFile("inputs/bingo")
-	if err != nil {
-		return Bingo{}, err
-	}
+	rawBingo := inputs.Bingo
+	fmt.Printf("Raw bingo: %s\n", rawBingo)
 
 	var bingo Bingo
 	return bingo, nil

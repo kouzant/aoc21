@@ -1,18 +1,14 @@
 package day1
 
 import (
-	"aoc21/utils"
+	"aoc21/inputs"
 	"fmt"
 	"strconv"
 	"strings"
 )
 
 func DepthReadings() ([]int, error) {
-	r, err := utils.ReadFile("inputs/depth_readings")
-	if err != nil {
-		return nil, err
-	}
-	rs := strings.Split(string(r), "\n")
+	rs := strings.Split(inputs.DepthReadings, "\n")
 	var depths []int
 	for _, d := range rs {
 		di, _ := strconv.Atoi(d)

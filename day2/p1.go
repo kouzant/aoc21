@@ -1,7 +1,7 @@
 package day2
 
 import (
-	"aoc21/utils"
+	"aoc21/inputs"
 	"fmt"
 	"strconv"
 	"strings"
@@ -13,11 +13,7 @@ type Command struct {
 }
 
 func PlannedCourse() ([]Command, error) {
-	r, err := utils.ReadFile("inputs/planned_course")
-	if err != nil {
-		return nil, err
-	}
-	rawCourse := strings.Split(string(r), "\n")
+	rawCourse := strings.Split(inputs.PlannedCourse, "\n")
 	var course []Command
 	for _, c := range rawCourse {
 		cp := strings.Split(c, " ")

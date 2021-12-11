@@ -39,6 +39,8 @@ func getPuzzle(puzzle string) (Puzzle, error) {
 		return day3.CreatePuzzle2(), nil
 	case "d4p1":
 		return day4.CreatePuzzle1(), nil
+	case "d4p2":
+		return day4.CreatePuzzle2(), nil
 	}
 	return nil, fmt.Errorf("no puzzle with name: %s", puzzle)
 }
